@@ -8,7 +8,7 @@ Gris = rgba(55, 55, 55, 1)
 Blanc = rgba(255, 255, 255, 1)
 */
 
-/* #message_2, #message_3, #message_4, #message_5, #message_6, #message_7, #message_8{ display: none; } */
+#message_1, #message_2, #message_3, #message_4, #message_5, #message_6, #message_7, #message_8{ display: none; }
 
 .container{ margin-top: 10px; }
 

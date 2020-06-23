@@ -132,11 +132,11 @@
                     <div class="col-10">
                         <div class="message_content message_right">
                             <div class="row">
-                                <div class="col-10">
-                                    <label for="reply">Votre réponse</label>
-                                    <textarea class="form-control" id="text-reply" placeholder="Insérer votre réponse ici." rows="2"></textarea>
+                                <div class="col-9">
+                                    <label for="reply">Votre Nom et Prénom</label>
+                                    <input class="form-control" id="nomprenom" type="text" placeholder="Tel que : Nom Prénom"/>
                                 </div>
-                                <div class="col-2 text-center">
+                                <div class="col-3 text-center">
                                     <br>
                                     <button class="btn btn-primary btn-bnp" id="validnomprenom" type="submit">Valider</button>
                                 </div>
@@ -157,7 +157,7 @@
                     <!-- Mesage -->
                     <div class="col-10">
                         <div class="message_content message_left">
-                            <p>Jolie prénom, 😊 ! Quelle est votre date de naissance ?</p>
+                            <p>Joli prénom, 😊 ! Quelle est votre date de naissance ?</p>
                         </div>
                     </div>
                     <div class="col-1"></div>
@@ -177,9 +177,13 @@
                     <div class="col-10">
                         <div class="message_content message_right">
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-9">
                                     <label for="reply">Sélectionnez votre date de naissance</label>
-                                    <input class="form-control" id="date" type="date" value="2020-06-01">
+                                    <input class="form-control" id="age" type="date" value="2020-06-01">
+                                </div>
+                                <div class="col-3 text-center">
+                                    <br>
+                                    <button class="btn btn-primary btn-bnp" id="validage" type="submit">Valider</button>
                                 </div>
                             </div>
                         </div>
@@ -197,7 +201,7 @@
                 <div id="message_7" class="row messages">
                     <!-- Mesage -->
                     <div class="col-10">
-                        <div class="message_content message_left">
+                        <div class="message_content message_left" id="message_fin">
                             <p>Merci [Monsieur ou Madame] + [Prénom] + vous êtes [majeur ou mineur] !</p>
                         </div>
                     </div>
@@ -217,7 +221,7 @@
                     <div class="col-10">
                         <div class="message_content message_left">
                             <labeb>Cliquer sur le bouton ci-dessous pour relancer.</labeb>
-                            <button class="btn btn-primary btn-bnp" type="submit">Relancer</button>
+                            <button class="btn btn-primary btn-bnp" id="reload" type="submit">Relancer</button>
                         </div>
                     </div>
                     <div class="col-2"></div>
@@ -257,9 +261,15 @@
         <script src="https://dev.ldumay.fr/toolkits/js/collection_full.js"></script>
         <!-- ./JSComplément -->
         
+        <!-- JSCollectionAndClass -->
+        <script type="text/javascript" src="js/javaCollectionScroll.js"></script>
+        <script type="text/javascript" src="js/javaCollectionDate.js"></script>
+        <script type="text/javascript" src="js/classClient.js"></script>
+        <script type="text/javascript" src="js/classTimer.js"></script>
+        <!-- ./JSCollectionAndClass -->
+
         <!-- JSActive -->
         <script type="text/javascript" src="js/java.js"></script>
-        <script type="text/javascript" src="js/classClient.js"></script>
         <!-- ./JSActive -->
         
     <!-- ./Javascript -->

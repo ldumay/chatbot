@@ -1,5 +1,6 @@
 /* Code préparer */
 
+/*
 // Compte à rebour
 function timer(counter,showTimer,timeOutAction,resetParameters){
     // 1000 = 10s | 30000 = 30s | 60000 = 1m | 9000 = 1m30s
@@ -40,6 +41,7 @@ function timer(counter,showTimer,timeOutAction,resetParameters){
     }
     start()
 }
+*/
 // Affichage
 function afficheDisplayID(valueID){ $('#'+valueID+'').show(); }
 function masqueDisplayID(valueID){ $('#'+valueID+'').hide(); }
@@ -60,28 +62,81 @@ function(){
 }
 */
 
+// Initialisation d'un compte à rebour
+function initTimer(messageg,time){
+    timer = new TimerMessage();
+    //console.log( timer );
+    timer.start(messageg,time);
+}
+
+// Préparation des donneés de fin à afficher
+function affichMessageFin(){}
+
+// Choix du sexe Homme
 $("#homme").click(function(){
-    client.modifHomme;
-    console.log( client );
+    client.modifSexe('Homme');
+    $("#message_2 .message_content").html('<p>Merci !</p>');
+    initTimer('#message_4',2);
+    // Descente de la page vers le bas
+    scrollToBottom();
 });
+// Choix du sexe Femme
 $("#femme").click(function(){
-    client.modifFemme;
+    client.modifSexe('Femme');
+    $("#message_2 .message_content").html('<p>Merci !</p>');
+    initTimer('#message_4',2);
+    // Descente de la page vers le bas
+    scrollToBottom();
+});
+// Insertion du Nom et Prénom
+$('#validnomprenom').click(function(){
+    var nomprenom = $('#nomprenom').val();
+    console.log('nomprenom : '+nomprenom);
+    client.recupNomEtPrenom(nomprenom)
     console.log( client );
+    $("#message_4 .message_content").html('<p>Merci !</p>');
+    initTimer('#message_6',2);
+    // Descente de la page vers le bas
+    scrollToBottom();
+});
+// Insertion de l'âge et Affichageg de l'avant dernier message
+$('#validage').click(function(){
+    var age = $('#age').val();
+    console.log('age : '+age);
+    client.recupAge(age);
+    console.log( client );
+
+    // Préparation des donnée à afficher
+    if(client.sexe=='Homme'){ denomitation = 'Monsieur'; }else{ denomitation = 'Madame'; }
+    today = createDateNow();
+    console.log(today);
+    today = formatDate(today,'y');
+    birthday = formatDate(client.age,'y');
+    majority = today - birthday;
+    if(majority>=18){ majority_type = 'majeur'; }else{ majority_type = 'mineur'; }
+    console.log('Today : '+today+' - Age : '+client.age+'\nMajority : '+majority+'\nMajorité type : '+majority_type);
+    phrase = '<p>Merci '+denomitation+' '+client.nom+' '+client.prenom+' vous êtes '+majority_type+' !</p>';
+    console.log(phrase);
+    $("#message_fin").html(phrase);
+
+    $("#message_6 .message_content").html('<p>Merci !</p>');
+    // Affichage du dernier message
+    initTimer('#message_8',2);
+    // Descente de la page vers le bas
+    scrollToBottom();
+});
+// Relancer la conversation
+$('#reload').click(function(){
+    document.location.reload(true);
 });
 
 /* Code actif après chargement de la page */
 $(function() {
-    client = new Client();
-    console.log('Ready!');
-    console.log( client );
-    // timer(10,false,'#message_2',true);
+    console.log('Start');
 
-    /*
-    timer(10,false,'#message_3',true);
-    timer(10,false,'#message_4',true);
-    timer(10,false,'#message_5',true);
-    timer(10,false,'#message_6',true);
-    timer(10,false,'#message_7',true);
-    timer(10,false,null,false);
-    */
+    client = new Client();
+    console.log( client );
+    
+    initTimer('#message_1',2);
+    initTimer('#message_2',4);
 });
