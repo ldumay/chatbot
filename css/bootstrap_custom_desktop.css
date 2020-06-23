@@ -1,0 +1,89 @@
+/* CSS - Bootstrap - Desktop */
+
+/*
+Code couleurs BNP
+Vert = rgba(0, 145, 90, 1)
+Vert Foncé = rgba(0, 109, 68, 1)
+Gris = rgba(55, 55, 55, 1)
+Blanc = rgba(255, 255, 255, 1)
+*/
+
+/* #message_2, #message_3, #message_4, #message_5, #message_6, #message_7, #message_8{ display: none; } */
+
+.container{ margin-top: 10px; }
+
+.text-center{ text-align: center; }
+.text-left{ text-align: left; }
+.text-right{ text-align: right; }
+
+.btn-bnp{
+    margin-top: 5%;
+	width: 100%;
+    height: 72%;
+	background-color: rgba(0, 145, 90, 1);
+    border-color: rgba(0, 145, 90, 1);
+}
+.btn-bnp:hover{
+	background-color: rgba(0, 109, 68, 1);
+    border-color: rgba(0, 109, 68, 1);
+}
+
+#title_project{
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1% 3% 1% 3%;
+    color: rgba(0, 0, 0, 1);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+#title_project h1{ font-size: 1.4rem; }
+#description{
+    left: 0;
+    right: 0;
+    padding: 1% 3% 1% 3%;
+    color: rgba(0, 0, 0, 1);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+#chat{
+    width: 100%;
+    left: 0;
+    right: 0;
+	color: rgba(255, 255, 255, 1);
+}
+#chat h5{ color: rgba(0, 0, 0, 1); }
+.messages{ margin: 3% 0 0 0; }
+.message_content{
+    padding: 4%;
+    border-radius: .75rem;
+}
+.message_left{ background-color: rgba(55, 55, 55, 0.7); }
+.message_right{ background-color: rgba(0, 145, 90, 1); }
+.message_right .btn-bnp{ border: 1px solid rgba(0, 0, 0, 0.4); }
+
+#timer{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    padding: 10px;
+    background: rgba(115, 115, 115, 1);
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+}
+.progress{
+    margin: -8px;
+    border-radius: 0;
+}
+
+#reply{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    padding: 2%;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(115, 115, 115, 1);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}

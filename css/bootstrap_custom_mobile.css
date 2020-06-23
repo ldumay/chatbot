@@ -1,0 +1,72 @@
+/* CSS - Bootstrap - Mobile */
+
+/*
+@media screen and (max-width: 2200px) {
+	#timer{ bottom: 170px; }
+	#reply{ height: 170px; }
+}
+@media screen and (max-width: 1800px) {
+	#title_prokect{ height: 60px; }
+	#title_project h1{ font-size: 2.2rem; }
+
+	#description{ top: 60px; }
+	#description h2{ font-size: 1.2rem; }
+	#description p{ font-size: 0.75rem; }
+
+	#chat{ font-size: 0.7rem; }
+	#timer { bottom: 130px; }
+	#reply{ font-size: 0.9rem; height: 130px; }
+	#text-reply{ font-size: 0.7rem; }
+	.btn-bnp{ font-size: 0.6rem; }
+
+	#timer{ bottom: 140px; }
+	#reply{ height: 140px; }
+}
+@media screen and (max-width: 900px) {
+	#title_prokect{ height: 60px; }
+	#title_project h1{ font-size: 2.2rem; }
+
+	#description{ top: 60px; }
+	#description h2{ font-size: 1.4rem; }
+	#description p{ font-size: 1.1rem; }
+
+	#chat{ font-size: 0.7rem; }
+	#timer { bottom: 130px; }
+	#reply{ font-size: 0.9rem; height: 130px; }
+	#text-reply{ font-size: 0.7rem; }
+	.btn-bnp{ font-size: 0.6rem; }
+}
+
+@media screen and (max-width: 600px) {
+	#title_prokect{ height: 60px; }
+	#title_project h1{ font-size: 2.2rem; }
+
+	#description{ top: 60px; }
+	#description h2{ font-size: 1.2rem; }
+	#description p{ font-size: 0.75rem; }
+
+	#chat{ font-size: 0.7rem; }
+	#timer { bottom: 130px; }
+	#reply{ font-size: 0.9rem; height: 130px; }
+	#text-reply{ font-size: 0.7rem; }
+	.btn-bnp{ font-size: 0.6rem; }
+}
+
+@media screen and (max-width: 400px) {
+	#title_prokect{ height: 60px; }
+	#title_project h1{ font-size: 2.2rem; }
+
+	#description{ top: 60px; }
+	#description h2{ font-size: 1.2rem; }
+	#description p{ font-size: 0.75rem; }
+
+	#chat{ font-size: 0.7rem; }
+	#timer { bottom: 100px; }
+	#reply{ font-size: 0.9rem; height: 100px; }
+	#text-reply{ font-size: 0.7rem; }
+	.btn-bnp{ font-size: 0.5rem; }
+
+	.col-10{ max-width: 73.333333%; }
+	.col-2{ max-width: 26.666667%; }
+}
+*/
