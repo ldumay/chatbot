@@ -70,7 +70,40 @@ function initTimer(messageg,time){
 }
 
 // Préparation des donneés de fin à afficher
-function affichMessageFin(){}
+function affichMessageFin(nom,prenom,sexe,age){
+    if(sexe=='Homme'){ denomitation = 'Monsieur'; }else{ denomitation = 'Madame'; }
+    today = createDateNow();
+    console.log(today);
+    today = formatDate(today,'y');
+    birthday = formatDate(age,'y');
+    majority = today - birthday;
+    if(majority>=18){ majority_type = 'majeur'; }else{ majority_type = 'mineur'; }
+    console.log('Today : '+today+' - Age : '+age+'\nMajority : '+majority+'\nMajorité type : '+majority_type);
+    phrase = '<p>Merci '+denomitation+' '+nom+' '+prenom+' vous êtes '+majority_type+' !</p>';
+    console.log(phrase);
+    $("#message_fin").html(phrase);
+}
+
+// Envoi des données vers l'API
+function envoiDataToApi(data){
+    $.ajax({
+        method: "POST",
+        url: ':3000/api/v1/',
+        data: {data: data},
+        dataType: 'html',
+        success: function () {
+            console.log('Datas posted !');
+        },
+        error: function () {
+            console.log('Datas not posted !');
+        }
+        /* ,
+         complete : function(resultat, statut){
+         alert('Complete !!!\n\nStatut : '+statut+'\nResultat : '+resultat);
+         }
+         */
+    });
+}
 
 // Choix du sexe Homme
 $("#homme").click(function(){
@@ -106,18 +139,8 @@ $('#validage').click(function(){
     client.recupAge(age);
     console.log( client );
 
-    // Préparation des donnée à afficher
-    if(client.sexe=='Homme'){ denomitation = 'Monsieur'; }else{ denomitation = 'Madame'; }
-    today = createDateNow();
-    console.log(today);
-    today = formatDate(today,'y');
-    birthday = formatDate(client.age,'y');
-    majority = today - birthday;
-    if(majority>=18){ majority_type = 'majeur'; }else{ majority_type = 'mineur'; }
-    console.log('Today : '+today+' - Age : '+client.age+'\nMajority : '+majority+'\nMajorité type : '+majority_type);
-    phrase = '<p>Merci '+denomitation+' '+client.nom+' '+client.prenom+' vous êtes '+majority_type+' !</p>';
-    console.log(phrase);
-    $("#message_fin").html(phrase);
+    affichMessageFin(client.nom,client.prenom,client.sexe,client.age);
+    envoiDataToApi(client);
 
     $("#message_6 .message_content").html('<p>Merci !</p>');
     // Affichage du dernier message

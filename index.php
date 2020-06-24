@@ -112,7 +112,7 @@
                     <!-- Mesage -->
                     <div class="col-10">
                         <div class="message_content message_left">
-                            <p>Merci, quel est votre prénom ?</p>
+                            <p>Merci, quel est votre Nom et Prénom ?</p>
                         </div>
                     </div>
                     <div class="col-2"></div>

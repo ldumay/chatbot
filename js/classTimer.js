@@ -22,7 +22,7 @@ class TimerMessage{
             scrollToBottom();
             // Préparation de la date du message
             today = createDateNow();
-            $(messagepass+" #message_date").html('<small id="message_date" class="text-muted">'+today+'</small>');
+            $(messagepass+" #message_date").html(today);
             // Affiche le message suivant
             $(messagepass).css("display", "flex");
         },this.time);
