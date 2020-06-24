@@ -87,8 +87,15 @@ $('#validage').click(function(){
     client.recupAge(age);
     console.log( client );
 
-    affichMessageFin(client.nom,client.prenom,client.sexe,client.age);
+    // Envoi des données du client vers l'API
     envoiDataToApi(client);
+    // Mise à jour des données du cookie client
+    ecrire_cookie('client', client);
+    cookieclient = lire_cookie('client');
+    console.log('Mise à jour du cookie "client" '+cookieclient);
+
+    // Affichage du message de Fin
+    affichMessageFin(client.nom,client.prenom,client.sexe,client.age);
 
     $("#message_6 .message_content").html('<p>Merci !</p>');
     // Affichage du dernier message
@@ -105,9 +112,16 @@ $('#reload').click(function(){
 $(function() {
     console.log('Start');
 
+    // Préparation du cookie du client
+    ecrire_cookie('client', '{ sexe:"", nom:"", prenom:"" ,age:"" }');
+    cookieclient = lire_cookie('client');
+    console.log("Cookie 'client' "+cookieclient);
+
+    // Préparation des données du client
     client = new Client();
     console.log( client );
     
+    // Démarrage de la conversation
     initTimer('#message_1',1);
     initTimer('#message_2',2);
 });

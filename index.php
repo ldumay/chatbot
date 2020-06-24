@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//FR" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
     <head>
@@ -11,11 +10,11 @@
         <meta name="author" content="Mr Loïc Dumay">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="http://dev.ldumay.fr/resources/img/favicons/favicon.png">
+        <link rel="shortcut icon" href="https://dev.ldumay.fr/resources/img/favicons/favicon.png">
         <!-- ./Favicon -->
 
         <!-- Apple Icon -->
-        <link rel="apple-touch-icon" href="http://dev.ldumay.fr/resources/img/favicons/favicon_apple.png">
+        <link rel="apple-touch-icon" href="https://dev.ldumay.fr/resources/img/favicons/favicon_apple.png">
         <!-- ./Apple Icon -->
 
         <meta charset="UTF-8">
@@ -264,6 +263,7 @@
         <!-- JSCollectionAndClass -->
         <script type="text/javascript" src="js/javaCollectionScroll.js"></script>
         <script type="text/javascript" src="js/javaCollectionDate.js"></script>
+        <script type="text/javascript" src="js/javaCollectionCookies.js"></script>
         <script type="text/javascript" src="js/classClient.js"></script>
         <script type="text/javascript" src="js/classTimer.js"></script>
         <!-- ./JSCollectionAndClass -->
