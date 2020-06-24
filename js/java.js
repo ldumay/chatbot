@@ -1,73 +1,34 @@
 /* Code préparer */
 
-/*
-// Compte à rebour
-function timer(counter,showTimer,timeOutAction,resetParameters){
-    // 1000 = 10s | 30000 = 30s | 60000 = 1m | 9000 = 1m30s
-    var cssWidth = 0;
-    var time = counter * 100;
-    var intervalId = null;
-    function action() {
-        clearInterval(intervalId);
-        if(counter<0)
-            counter=0;
-        // Evolution de la barre de progression en fonction du temps
-        setTimeout(function(){
-            $("#progress-bar").addClass("progress-bar-success");
-            $("#progress-bar").removeClass("active");
-        }, time);
-        // Action de fin
-        setTimeout(function(){
-            console.log('end - compteur!');
-            $('#timer').hide();
-            if(timeOutAction!=null){ $(timeOutAction).css("display", "flex"); }
-            if(resetParameters==true){ counter = 0; cssWidth = 0; }
-        }, time)
-    }
-    function bip() {
-        console.log("counter: "+counter);
-        console.log("cssWidth: "+cssWidth);
-
-        if(showTimer==false){ $(".timer").show(); }
-        $("#progress-bar").css("width",""+cssWidth+"%");
-
-        cssWidth = cssWidth + 10;
-        counter--;
-    }
-    function start() {
-        console.log('start - compteur');
-        intervalId = setInterval(bip, time);
-        setTimeout(action, counter * (time+100) );
-    }
-    start()
-}
-*/
-// Affichage
-function afficheDisplayID(valueID){ $('#'+valueID+'').show(); }
-function masqueDisplayID(valueID){ $('#'+valueID+'').hide(); }
-
-/*
-function(){
-    $.ajax({
-        url : 'more_com.php',
-        type : 'GET',
-        dataType : 'html',
-        success : function(code_html, statut){ // success est toujours en place, bien sûr !
-            alert('test');
-        },
-        error : function(resultat, statut, erreur){
-         alert('test');
-        }
-     });
-}
-*/
-
 // Initialisation d'un compte à rebour
 function initTimer(messageg,time){
     timer = new TimerMessage();
     //console.log( timer );
     timer.start(messageg,time);
 }
+
+/*
+// Source URI de Dev
+console.log("Output;");  
+console.log(location.hostname);
+console.log(document.domain);
+
+console.log("document.URL : "+document.URL);
+console.log("document.location.href : "+document.location.href);
+console.log("document.location.origin : "+document.location.origin);
+console.log("document.location.hostname : "+document.location.hostname);
+console.log("document.location.host : "+document.location.host);
+console.log("document.location.pathname : "+document.location.pathname);
+
+// Bar de chargegment
+function timerBar() {
+    console.log('TimerBar => counter : '+counter+' - cssWidth : '+cssWidth);
+    if(showTimer==false){ $(".timer").show(); }
+    $("#progress-bar").css("width",""+cssWidth+"%");
+    cssWidth = cssWidth + 10;
+    counter--;
+}
+*/
 
 // Préparation des donneés de fin à afficher
 function affichMessageFin(nom,prenom,sexe,age){
@@ -86,23 +47,10 @@ function affichMessageFin(nom,prenom,sexe,age){
 
 // Envoi des données vers l'API
 function envoiDataToApi(data){
-    $.ajax({
-        method: "POST",
-        url: ':3000/api/v1/',
-        data: {data: data},
-        dataType: 'html',
-        success: function () {
-            console.log('Datas posted !');
-        },
-        error: function () {
-            console.log('Datas not posted !');
-        }
-        /* ,
-         complete : function(resultat, statut){
-         alert('Complete !!!\n\nStatut : '+statut+'\nResultat : '+resultat);
-         }
-         */
-    });
+    url = document.location.origin+':3000/api/v1/';
+    console.log('Url d\'envoi : '+url);
+    $.post( url, data );
+    console.log('Datas posted !');
 }
 
 // Choix du sexe Homme
@@ -160,6 +108,6 @@ $(function() {
     client = new Client();
     console.log( client );
     
-    initTimer('#message_1',2);
-    initTimer('#message_2',4);
+    initTimer('#message_1',1);
+    initTimer('#message_2',2);
 });
