@@ -1,0 +1,7 @@
+# - - [ .gitignore ] - -
+#
+# Ne pas synchroniser,
+
+#-> les fichiers type :
+
+*.DS_Store
